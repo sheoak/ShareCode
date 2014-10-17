@@ -1,5 +1,4 @@
 <?php
-  require_once 'classes/uri.class.php';
   require_once 'include/init.php';
 ?>
 <!doctype html>
