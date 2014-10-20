@@ -14,7 +14,7 @@ function generateRandomString($length = 10)
 
 $slug = substr($_SERVER['REQUEST_URI'], strripos($_SERVER['REQUEST_URI'], "/")+1);
 
-if ($slug == '' || substr($slug, 0, 9) == 'index.php')
+if ($slug == '' || strlen($slug) < 3 || !ctype_alnum($slug))
 {
   $baseRequestURI = substr($_SERVER['REQUEST_URI'], 0, strripos($_SERVER['REQUEST_URI'], "/")+1);
 
