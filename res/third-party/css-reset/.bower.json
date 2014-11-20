@@ -1,0 +1,16 @@
+{
+  "name": "css-reset",
+  "version": "2.5.1",
+  "main": "reset.css",
+  "ignore": [],
+  "homepage": "https://github.com/ivangabriele/CSS-Reset",
+  "_release": "2.5.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.5.1",
+    "commit": "90072ec9db7fe66ff91e83244dbb55d68ada83d5"
+  },
+  "_source": "git://github.com/ivangabriele/CSS-Reset.git",
+  "_target": "2.*",
+  "_originalSource": "css-reset"
+}

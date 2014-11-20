@@ -11,26 +11,27 @@
 
       <title>Share live code in your browser</title>
       
-      <link rel="stylesheet" href="css/reset.css">
-      <link rel="stylesheet" href="codemirror/lib/codemirror.css">
-      <link rel="stylesheet" href="codemirror/theme/monokai.css">
-      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="res/third-party/css-reset/reset.min.css">
+      <link rel="stylesheet" href="res/third-party/codemirror/lib/codemirror.css">
+      <link rel="stylesheet" href="res/third-party/codemirror/theme/monokai.css">
+      <link rel="stylesheet" href="res/css/main.css">
   </head>
 
   <body>
     
     <textarea id="code" name="code"></textarea>
       
-    <script src="codemirror/lib/codemirror.js"></script>
-    <script src="codemirror/mode/css/css.js"></script>
-    <script src="codemirror/mode/clike/clike.js"></script>
-    <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="codemirror/mode/javascript/javascript.js"></script>
-    <script src="codemirror/mode/php/php.js"></script>
-    <script src="codemirror/mode/xml/xml.js"></script>
-    <script src="codemirror/addon/edit/matchbrackets.js"></script>
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="res/third-party/codemirror/lib/codemirror.js"></script>
+    <script src="res/third-party/codemirror/mode/css/css.js"></script>
+    <script src="res/third-party/codemirror/mode/clike/clike.js"></script>
+    <script src="res/third-party/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="res/third-party/codemirror/mode/javascript/javascript.js"></script>
+    <script src="res/third-party/codemirror/mode/php/php.js"></script>
+    <script src="res/third-party/codemirror/mode/xml/xml.js"></script>
+    <script src="res/third-party/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="res/third-party/jquery/dist/jquery.js"></script>
+    <script src="res/js/getCode.function.js"></script>
+    <script src="res/js/main.js"></script>
 
     <script>
       window.slug = '<?= $slug ?>';
