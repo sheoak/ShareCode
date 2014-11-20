@@ -8,7 +8,7 @@ Installation
 
 Just copy/paste ShareCode directory wherever from you want to use it.
 
-Depending on you rights under Linux, you may have to change them for the "codes/" directory to allow writting.
+Depending on your rights under Linux, you may have to change them to allow writting under the `codes/` directory.
 
 Usage
 -----
