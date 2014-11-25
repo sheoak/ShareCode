@@ -1,94 +1,27 @@
-function getCode(firstTime)
+/**
+ * Gets the code via Ajax (loaded in PHP from a text file)
+ *
+ * @todo   Get rid of jQuery for optimization sake
+ * 
+ * @param  {boolean} firstTime TRUE if this is the first loading of the function, FALSE if not
+ * 
+ * @return {void}
+ */
+function getCode(callback)
 {
-  if (!firstTime)
-  {
-    firstTime = false;
-  }
-
+  // Ajax call to get the remote code
   $.get(
     "ajax/code_get.php?slug=" + window.slug,
     function(data)
     {
-      if (firstTime == true)
-      {
-        if (data.admin == true)
-        {
-          window.editor = CodeMirror.fromTextArea(
-            document.getElementById("code"),
-            {
-              lineNumbers: true,
-              matchBrackets: true,
-              mode: "application/x-httpd-php",
-              indentUnit: 4,
-              indentWithTabs: true,
-              theme: "monokai",
-              lineWrapping: true
-            }
-          );
-
-          $("textarea").keyup(
-            function()
-            {
-              $.post(
-                "ajax/code_update.php",
-                {
-                  slug: window.slug,
-                  code: window.editor.getValue()
-                }
-              );
-            }
-          );
-        }
-        else
-        {
-          window.editor = CodeMirror.fromTextArea(
-            document.getElementById("code"),
-            {
-              lineNumbers: true,
-              matchBrackets: true,
-              mode: "application/x-httpd-php",
-              indentUnit: 4,
-              indentWithTabs: true,
-              theme: "monokai",
-              lineWrapping: true,
-              readOnly: true
-            }
-          );
-
-          window.setTimeout(
-            function ()
-            {
-              window.setInterval(
-                function()
-                {
-                  $.get(
-                    "ajax/code_test.php?slug=" + window.slug,
-                    function(time)
-                    {
-                      if (time != window.lastCodeUpdateTime)
-                      {
-                        getCode();
-                      }
-                    }
-                  );
-                },
-                500
-              );
-            },
-            300
-          );
-        }
-      }
-
-      $.get(
-        "ajax/code_test.php?slug=" + window.slug,
-        function(time)
-        {
-          window.lastCodeUpdateTime = time;
-        }
-      );
-
+      // We update the local code within the #code textarea
       window.editor.setValue(data.code);
+
+      // If callback function is set
+      callback();
+
+      // If user is not and admin, we re-launch the loop (to check remote code each 0.5 seconds)
+      if (!window.admin) checkCode();
     }
   );
 }

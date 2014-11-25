@@ -1,5 +1,10 @@
+// Global variables
+var remoteCodeInfos = { timestamp: 0, size: 0 };
+
+// When DOM is loaded
 $(function() {
     
-  getCode(true);
+  // Let's launch the loop (checking remote code each 0.5 seconds)
+  checkCode();
 
 });

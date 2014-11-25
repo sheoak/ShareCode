@@ -21,6 +21,7 @@
     
     <textarea id="code" name="code"></textarea>
       
+    <!-- Code Mirror -->
     <script src="res/third-party/codemirror/lib/codemirror.js"></script>
     <script src="res/third-party/codemirror/mode/css/css.js"></script>
     <script src="res/third-party/codemirror/mode/clike/clike.js"></script>
@@ -29,11 +30,21 @@
     <script src="res/third-party/codemirror/mode/php/php.js"></script>
     <script src="res/third-party/codemirror/mode/xml/xml.js"></script>
     <script src="res/third-party/codemirror/addon/edit/matchbrackets.js"></script>
-    <script src="res/third-party/jquery/dist/jquery.js"></script>
+
+    <!-- jQuery -->
+    <script src="res/third-party/jquery-min/jquery.min.js"></script>
+
+    <!-- Functions -->
+    <script src="res/js/checkCode.function.js"></script>
     <script src="res/js/getCode.function.js"></script>
+    <script src="res/js/loadCodeMirror.function.js"></script>
+    <script src="res/js/updateCode.function.js"></script>
+
+    <!-- Main script -->
     <script src="res/js/main.js"></script>
 
     <script>
+      // PHP to JS URL slug
       window.slug = '<?= $slug ?>';
     </script>
 
