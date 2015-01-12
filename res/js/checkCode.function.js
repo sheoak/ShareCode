@@ -30,6 +30,7 @@ function checkCode(firstTime)
           // We install the 'keyup' event handler on the #code textarea
           $('textarea').keyup(updateCode);
           $('textarea').on('paste', 'textarea', updateCode)
+          $('textarea').on('cut', 'textarea', updateCode)
 
           // We set the global variable admin to TRUE
           window.admin = true;
